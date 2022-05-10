@@ -1,0 +1,19 @@
+{
+  "version": "17.0.0",
+  "files": {
+    "3fc4b33e4b01cacaabd9ae99937a25c2e411842bd48d3ec11a417e11526b48d5": {
+      "source": {
+        "path": "aws-fargate-application-autoscaling.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "3fc4b33e4b01cacaabd9ae99937a25c2e411842bd48d3ec11a417e11526b48d5.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

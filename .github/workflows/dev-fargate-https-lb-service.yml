@@ -1,0 +1,43 @@
+name: "dev-https-lb-fargate-svc"
+
+on:
+  push:
+    paths:
+      - "accounts/*/us-west-2/ecs/dev-https-lb-fargate-service/**"
+      - ".github/workflows/ecs.yml"
+
+jobs:
+  deploy-https-lb-fargate-cluster:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: accounts/finfare-dev/us-west-2/ecs/dev-https-lb-fargate-service
+    steps:
+      - name: Configure aws credentials
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-region: 'us-west-2'
+
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Install npm
+        run: sudo apt update -y && sudo apt install nodejs npm -y
+
+      - name: Install AWS CDK
+        run: sudo npm install -g aws-cdk
+
+      - name: Install Requirements
+        run: pip3 install -r requirements.txt
+
+      - name: Synthesize Application
+        run: cdk synth
+      
+      - name: Deploy 
+        run: cdk deploy --all --require-approval never

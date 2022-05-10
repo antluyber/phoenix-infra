@@ -1,0 +1,320 @@
+{
+  "version": "17.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "aws-fargate-application-autoscaling.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "aws-fargate-application-autoscaling.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "aws-fargate-application-autoscaling": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "aws-fargate-application-autoscaling.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3fc4b33e4b01cacaabd9ae99937a25c2e411842bd48d3ec11a417e11526b48d5.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "aws-fargate-application-autoscaling.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "aws-fargate-application-autoscaling.assets"
+      ],
+      "metadata": {
+        "/aws-fargate-application-autoscaling/Vpc/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc "
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/PublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/PublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/PublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/PublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/PublicSubnet1/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/PublicSubnet1/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/PublicSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/PublicSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/PublicSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/PublicSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/PublicSubnet2/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/PublicSubnet2/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/PrivateSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/PrivateSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/PrivateSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/PrivateSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/PrivateSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/PrivateSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/PrivateSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/PrivateSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/Vpc/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/fargate-service-autoscaling/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "fargateserviceautoscalingD107CF93"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/sample-app/LB/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "sampleappLBBDE1D276"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/sample-app/LB/PublicListener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "sampleappLBPublicListenerC4DF6480"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/sample-app/LB/PublicListener/ECSGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "sampleappLBPublicListenerECSGroup525A567D"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/sample-app/LoadBalancerDNS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "sampleappLoadBalancerDNS19B00097"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/sample-app/TaskDef/TaskRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "sampleappTaskDefTaskRoleB530CAC0"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/sample-app/TaskDef/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "sampleappTaskDef6BF75736"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/sample-app/TaskDef/web": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "Proper policies need to be attached before pulling from ECR repository, or use 'fromEcrRepository'.",
+            "trace": [
+              "Annotations.addMessage (/private/var/folders/ms/8kdx2pgj53nf2lw62t4l1qx80000gn/T/jsii-kernel-BcWtvp/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1213)",
+              "Annotations.addWarning (/private/var/folders/ms/8kdx2pgj53nf2lw62t4l1qx80000gn/T/jsii-kernel-BcWtvp/node_modules/aws-cdk-lib/core/lib/annotations.js:1:600)",
+              "RepositoryImage.bind (/private/var/folders/ms/8kdx2pgj53nf2lw62t4l1qx80000gn/T/jsii-kernel-BcWtvp/node_modules/aws-cdk-lib/aws-ecs/lib/images/repository.js:1:1130)",
+              "new ContainerDefinition (/private/var/folders/ms/8kdx2pgj53nf2lw62t4l1qx80000gn/T/jsii-kernel-BcWtvp/node_modules/aws-cdk-lib/aws-ecs/lib/container-definition.js:1:2960)",
+              "FargateTaskDefinition.addContainer (/private/var/folders/ms/8kdx2pgj53nf2lw62t4l1qx80000gn/T/jsii-kernel-BcWtvp/node_modules/aws-cdk-lib/aws-ecs/lib/base/task-definition.js:1:9119)",
+              "new NetworkLoadBalancedFargateService (/private/var/folders/ms/8kdx2pgj53nf2lw62t4l1qx80000gn/T/jsii-kernel-BcWtvp/node_modules/aws-cdk-lib/aws-ecs-patterns/lib/fargate/network-load-balanced-fargate-service.js:1:1740)",
+              "/private/var/folders/ms/8kdx2pgj53nf2lw62t4l1qx80000gn/T/tmpekvoxfft/lib/program.js:8420:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/ms/8kdx2pgj53nf2lw62t4l1qx80000gn/T/tmpekvoxfft/lib/program.js:8848:24)",
+              "Kernel._create (/private/var/folders/ms/8kdx2pgj53nf2lw62t4l1qx80000gn/T/tmpekvoxfft/lib/program.js:8420:34)",
+              "Kernel.create (/private/var/folders/ms/8kdx2pgj53nf2lw62t4l1qx80000gn/T/tmpekvoxfft/lib/program.js:8161:29)",
+              "KernelHost.processRequest (/private/var/folders/ms/8kdx2pgj53nf2lw62t4l1qx80000gn/T/tmpekvoxfft/lib/program.js:9769:36)",
+              "KernelHost.run (/private/var/folders/ms/8kdx2pgj53nf2lw62t4l1qx80000gn/T/tmpekvoxfft/lib/program.js:9732:22)",
+              "Immediate._onImmediate (/private/var/folders/ms/8kdx2pgj53nf2lw62t4l1qx80000gn/T/tmpekvoxfft/lib/program.js:9733:46)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/aws-fargate-application-autoscaling/sample-app/TaskDef/web/LogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "sampleappTaskDefwebLogGroup34BE8C79"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/sample-app/TaskDef/ExecutionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "sampleappTaskDefExecutionRoleAD6F4C40"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/sample-app/TaskDef/ExecutionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "sampleappTaskDefExecutionRoleDefaultPolicy0AD15374"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/sample-app/Service/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "sampleappServiceE7504FDB"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/sample-app/Service/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "sampleappServiceSecurityGroup0ABF0D21"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/sample-app/Service/TaskCount/Target/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "sampleappServiceTaskCountTargetE827DC30"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/sample-app/Service/TaskCount/Target/CpuScaling/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "sampleappServiceTaskCountTargetCpuScalingF4452F80"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/LoadBalancerDNS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LoadBalancerDNS"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/aws-fargate-application-autoscaling/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "aws-fargate-application-autoscaling"
+    }
+  }
+}
